@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Vivir mejor con Hashimoto | Teis</title>
+		<style>
+			:root {
+				--navy: #17364b;
+				--teal: #477d83;
+				--pale: #edf4f3;
+				--ink: #24333c;
+				--muted: #64747b;
+				--line: #dce5e5;
+				--white: #fff;
+				--sand: #f7f8f6;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				margin: 0;
+				background: var(--sand);
+				color: var(--ink);
+				font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial,
+					sans-serif;
+			}
+			header {
+				background: var(--navy);
+				color: white;
+				padding: 18px max(22px, calc((100% - 1120px) / 2));
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				box-shadow: 0 3px 14px #142d3c22;
+			}
+			.brand {
+				font-weight: 750;
+				letter-spacing: 0.08em;
+				font-size: 0.78rem;
+				color: #c9dce2;
+			}
+			.top {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 20px;
+			}
+			.top nav {
+				display: flex;
+				gap: 16px;
+				flex-wrap: wrap;
+			}
+			.top nav a {
+				color: #e8f0f2;
+				text-decoration: none;
+				font-size: 0.88rem;
+			}
+			.top nav a:hover {
+				text-decoration: underline;
+			}
+			main {
+				max-width: 1120px;
+				margin: auto;
+				padding: 30px 22px 70px;
+			}
+			.hero {
+				background: linear-gradient(120deg, #17364b, #315e69);
+				color: white;
+				border-radius: 18px;
+				padding: 54px 42px;
+				margin: 12px 0 28px;
+			}
+			.eyebrow {
+				text-transform: uppercase;
+				letter-spacing: 0.13em;
+				font-size: 0.76rem;
+				color: #c7dcdf;
+				font-weight: 700;
+			}
+			.hero h1 {
+				font-size: clamp(2rem, 5vw, 3.4rem);
+				line-height: 1.1;
+				margin: 12px 0;
+			}
+			.hero p {
+				max-width: 660px;
+				color: #e3edef;
+				font-size: 1.08rem;
+			}
+			.pill {
+				display: inline-block;
+				border: 1px solid #ffffff66;
+				border-radius: 99px;
+				padding: 6px 12px;
+				font-size: 0.8rem;
+				margin-top: 12px;
+			}
+			section {
+				scroll-margin-top: 100px;
+				margin: 38px 0;
+			}
+			.section-head {
+				margin-bottom: 18px;
+			}
+			.section-head h2 {
+				color: var(--navy);
+				font-size: 1.75rem;
+				margin: 0;
+			}
+			.section-head p {
+				margin: 5px 0;
+				color: var(--muted);
+				max-width: 760px;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 14px;
+			}
+			.card {
+				background: white;
+				border: 1px solid var(--line);
+				border-radius: 14px;
+				padding: 20px;
+				box-shadow: 0 4px 14px #18374608;
+			}
+			.card h3 {
+				margin: 0 0 7px;
+				color: var(--navy);
+				font-size: 1.08rem;
+			}
+			.card p {
+				margin: 0;
+				color: #52636b;
+			}
+			.number {
+				color: var(--teal);
+				font-weight: 800;
+				font-size: 0.8rem;
+				letter-spacing: 0.08em;
+			}
+			.tag {
+				display: inline-block;
+				background: var(--pale);
+				color: #315f65;
+				border-radius: 6px;
+				padding: 3px 8px;
+				font-size: 0.76rem;
+				margin: 10px 5px 0 0;
+			}
+			.callout {
+				background: #edf4f3;
+				border-left: 4px solid var(--teal);
+				padding: 14px 17px;
+				border-radius: 8px;
+				color: #38535a;
+			}
+			.controls {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				flex-wrap: wrap;
+				margin: 14px 0;
+			}
+			.btn,
+			button {
+				border: 0;
+				border-radius: 8px;
+				background: var(--navy);
+				color: white;
+				padding: 10px 15px;
+				font: inherit;
+				cursor: pointer;
+			}
+			.btn.secondary,
+			button.secondary {
+				background: #e8efef;
+				color: var(--navy);
+				border: 1px solid var(--line);
+			}
+			button:hover {
+				filter: brightness(1.08);
+			}
+			select,
+			input,
+			textarea {
+				font: inherit;
+				border: 1px solid #cbd8d9;
+				border-radius: 8px;
+				padding: 9px;
+				background: white;
+				color: var(--ink);
+				max-width: 100%;
+			}
+			.calendar {
+				display: grid;
+				grid-template-columns: repeat(7, 1fr);
+				gap: 7px;
+			}
+			.month {
+				background: white;
+				border: 1px solid var(--line);
+				border-radius: 13px;
+				padding: 15px;
+			}
+			.month h3 {
+				margin: 0 0 10px;
+				color: var(--navy);
+			}
+			.month ul {
+				padding-left: 19px;
+				margin: 0;
+			}
+			.month li {
+				margin: 7px 0;
+				font-size: 0.9rem;
+			}
+			.month small {
+				color: var(--muted);
+			}
+			.exercise {
+				border: 1px solid var(--line);
+				border-radius: 12px;
+				background: white;
+				margin: 10px 0;
+				overflow: hidden;
+			}
+			.exercise summary {
+				cursor: pointer;
+				padding: 16px 18px;
+				font-weight: 700;
+				color: var(--navy);
+			}
+			.exercise .inside {
+				padding: 0 18px 18px;
+			}
+			.steps {
+				padding-left: 22px;
+			}
+			.timer {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				flex-wrap: wrap;
+				background: var(--pale);
+				padding: 12px;
+				border-radius: 9px;
+			}
+			.timer strong {
+				font-size: 1.25rem;
+				color: var(--navy);
+				min-width: 58px;
+			}
+			form {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+				gap: 12px;
+			}
+			label {
+				display: grid;
+				gap: 5px;
+				font-size: 0.9rem;
+				color: #45575f;
+			}
+			textarea {
+				min-height: 85px;
+				grid-column: 1/-1;
+			}
+			footer {
+				background: var(--navy);
+				color: #e3edef;
+				padding: 25px;
+				text-align: center;
+				font-size: 0.85rem;
+			}
+			.edit-note {
+				font-size: 0.82rem;
+				color: var(--muted);
+			}
+			.editing [data-editable="true"] {
+				outline: 2px dashed #78a7a8;
+				outline-offset: 3px;
+				border-radius: 4px;
+			}
+			@media (max-width: 760px) {
+				header {
+					position: static;
+				}
+				.top {
+					align-items: flex-start;
+					flex-direction: column;
+				}
+				.top nav {
+					gap: 10px;
+				}
+				.hero {
+					padding: 36px 24px;
+				}
+				.calendar {
+					grid-template-columns: 1fr 1fr;
+				}
+				.month:last-child {
+					grid-column: span 2;
+				}
+			}
+			@media (max-width: 420px) {
+				.calendar {
+					grid-template-columns: 1fr;
+				}
+				.month:last-child {
+					grid-column: auto;
+				}
+				main {
+					padding-left: 14px;
+					padding-right: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="top">
+				<div>
+					<div class="brand">PROGRAMA COMUNITARIO · TEIS</div>
+					<div style="font-weight: 700">
+						Vivir mejor con Hashimoto
+					</div>
+				</div>
+				<nav>
+					<a href="#programa">Programa</a
+					><a href="#actividades">Actividades</a
+					><a href="#calendario">Calendario</a
+					><a href="#practicas">Relajación</a
+					><a href="#diario">Diario del sueño</a>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="hero">
+				<div class="eyebrow">Salud · Educación · Bienestar</div>
+				<h1 data-editable="true">Vivir mejor con Hashimoto</h1>
+				<p data-editable="true">
+					Un programa comunitario en el barrio de Teis para mejorar
+					los conocimientos sobre la enfermedad, fomentar hábitos
+					saludables y acompañar a las personas en el cuidado de su
+					bienestar.
+				</p>
+				<span class="pill">Plan de salud · 7 meses</span>
+			</div>
+			<section id="programa">
+				<div class="section-head">
+					<h2>Conoce la enfermedad</h2>
+					<p>
+						Información básica para comprender la tiroiditis de
+						Hashimoto.
+					</p>
+				</div>
+				<div class="grid">
+					<article class="card">
+						<h3>¿Qué es?</h3>
+						<p data-editable="true">
+							Es una enfermedad autoinmunitaria crónica en la que
+							el sistema inmunitario ataca gradualmente la
+							glándula tiroides, provocando una inflamación que
+							puede dañar la glándula.
+						</p>
+					</article>
+					<article class="card">
+						<h3>¿Cómo afecta al organismo?</h3>
+						<p data-editable="true">
+							Su evolución suele ser lenta. Con el tiempo, la
+							tiroides puede producir menos hormonas,
+							especialmente T3 y T4, y el funcionamiento del
+							organismo puede ralentizarse.
+						</p>
+					</article>
+					<article class="card">
+						<h3>Síntomas principales</h3>
+						<p data-editable="true">
+							Cansancio, sensibilidad al frío, cambios de peso,
+							estreñimiento, piel seca, caída del pelo, uñas
+							quebradizas, cambios de ánimo, dificultad para
+							concentrarse, reglas irregulares y bocio.
+						</p>
+					</article>
+				</div>
+				<p class="callout">
+					La información de esta página tiene finalidad educativa y no
+					sustituye la valoración, el diagnóstico ni las indicaciones
+					de los profesionales sanitarios.
+				</p>
+			</section>
+			<section id="actividades">
+				<div class="section-head">
+					<h2>Actividades del programa</h2>
+					<p>
+						Las actividades se desarrollarán en el barrio de Teis,
+						principalmente en el Centro Sociocultural, con
+						adaptación a las necesidades de los participantes.
+					</p>
+				</div>
+				<div class="grid">
+					<article class="card">
+						<div class="number">01 · CONOCIMIENTO</div>
+						<h3>Taller informativo sobre Hashimoto</h3>
+						<p>
+							Charlas sobre qué es la enfermedad, cómo afecta al
+							organismo y sus principales síntomas. Se resolverán
+							dudas y se entregará un cuestionario de evaluación.
+						</p>
+						<span class="tag">Meses 1–3</span
+						><span class="tag">Cada 2 semanas</span
+						><span class="tag">Profesional sanitario</span>
+					</article>
+					<article class="card">
+						<div class="number">02 · ACTIVIDAD FÍSICA</div>
+						<h3>Caminatas saludables</h3>
+						<p>
+							Caminatas grupales adaptadas de 25–45 minutos, dos
+							veces por semana, con pausas y ritmo tranquilo.
+						</p>
+						<span class="tag">Meses 1–6</span
+						><span class="tag">2 veces por semana</span
+						><span class="tag">Monitor de actividad física</span>
+					</article>
+					<article class="card">
+						<div class="number">03 · DESCANSO</div>
+						<h3>Programa de mejora del sueño</h3>
+						<p>
+							Sesiones educativas sobre horarios regulares, uso de
+							pantallas, ambiente de descanso, rutinas relajantes,
+							alimentación y registro del sueño.
+						</p>
+						<span class="tag">Meses 1–6</span
+						><span class="tag">Diario durante 7 días</span
+						><span class="tag">Enfermería</span>
+					</article>
+					<article class="card">
+						<div class="number">04 · BIENESTAR</div>
+						<h3>Relajación y respiración</h3>
+						<p>
+							Sesiones prácticas de 30–45 minutos con respiración
+							diafragmática, relajación muscular, estiramientos
+							suaves, relajación guiada y atención plena.
+						</p>
+						<span class="tag">Meses 1–5</span
+						><span class="tag">1 sesión semanal</span
+						><span class="tag">Instructor de relajación</span>
+					</article>
+					<article class="card">
+						<div class="number">05 · APOYO SOCIAL</div>
+						<h3>Experiencias compartidas</h3>
+						<p>
+							Reuniones grupales para hablar, de forma voluntaria
+							y respetuosa, sobre la vida diaria, la gestión
+							emocional, el apoyo social, los hábitos y la
+							autoestima.
+						</p>
+						<span class="tag">Meses 1–5</span
+						><span class="tag">2 reuniones al mes</span
+						><span class="tag">Psicólogo/a</span>
+					</article>
+					<article class="card">
+						<div class="number">06 · AUTOCONOCIMIENTO</div>
+						<h3>Taller de identificación y registro de síntomas</h3>
+						<p>
+							Propuesta pendiente de incorporar al plan: reconocer
+							síntomas, registrar su evolución y preparar
+							preguntas para las consultas sanitarias.
+						</p>
+						<span class="tag">Propuesta</span
+						><span class="tag">Ficha de seguimiento</span>
+					</article>
+					<article class="card">
+						<div class="number">07 · NUTRICIÓN</div>
+						<h3>Taller de alimentación y nutrición</h3>
+						<p>
+							Propuesta pendiente de incorporar al plan: educación
+							alimentaria, planificación de menús y explicación
+							del papel de los nutrientes en el funcionamiento del
+							organismo.
+						</p>
+						<span class="tag">Propuesta</span
+						><span class="tag">Técnico Superior en Dietética</span>
+					</article>
+					<article class="card">
+						<div class="number">08 · SEGUIMIENTO</div>
+						<h3>Programa de seguimiento de la función tiroidea</h3>
+						<p>
+							Propuesta pendiente de incorporar al plan: fomentar
+							las revisiones médicas, la adherencia al tratamiento
+							prescrito y el seguimiento de las pruebas indicadas
+							por el equipo sanitario.
+						</p>
+						<span class="tag">Meses 1–7</span
+						><span class="tag">Equipo sanitario</span>
+					</article>
+				</div>
+				<p class="edit-note">
+					Las actividades 06, 07 y 08 son propuestas para completar el
+					proyecto; deben revisarse y aprobarse antes de presentarlas
+					como actividades definitivas.
+				</p>
+			</section>
+			<section id="calendario">
+				<div class="section-head">
+					<h2>Calendario de actividades</h2>
+					<p>
+						Planificación orientativa distribuida a lo largo de
+						siete meses. Puedes cambiar los nombres de los meses y
+						las actividades desde el modo de edición.
+					</p>
+				</div>
+				<div class="controls">
+					<label style="display: flex; align-items: center; gap: 8px"
+						>Mes de inicio del programa
+						<input type="month" id="startMonth" /></label
+					><button class="secondary" onclick="renderCalendar()">
+						Actualizar calendario
+					</button>
+				</div>
+				<div id="calendar" class="calendar"></div>
+				<p class="edit-note">
+					La planificación indica los meses de desarrollo, no fechas
+					ni horarios confirmados. Las fechas concretas deberán
+					acordarse con el centro y los profesionales.
+				</p>
+			</section>
+			<section id="rutas">
+				<div class="section-head">
+					<h2>Caminatas por Teis</h2>
+					<p>
+						Tres recorridos descritos en el documento del proyecto.
+						La ruta y su duración se adaptarán al grupo y a las
+						condiciones del recorrido.
+					</p>
+				</div>
+				<div class="grid">
+					<article class="card">
+						<h3>Parque de A Riouxa</h3>
+						<p>
+							Entrada del parque, caminos interiores, zona de
+							pérgolas, bancos y anfiteatro, con regreso al punto
+							de partida.
+						</p>
+						<span class="tag">1,8 km aprox.</span
+						><span class="tag">25–30 min</span
+						><span class="tag">Dificultad baja</span>
+					</article>
+					<article class="card">
+						<h3>ETEA y playas de Ríos</h3>
+						<p>
+							Inicio en la entrada de ETEA y paseo por espacios
+							abiertos próximos a la playa. Se incorporan pausas e
+							hidratación.
+						</p>
+						<span class="tag">2,2 km aprox.</span
+						><span class="tag">30–35 min</span
+						><span class="tag">Dificultad baja</span>
+					</article>
+					<article class="card">
+						<h3>Paseo litoral de A Guía</h3>
+						<p>
+							Desde la zona de A Punta hacia A Lagoa y regreso por
+							el mismo camino, eligiendo el tramo más accesible y
+							evitando escaleras y subidas al monte.
+						</p>
+						<span class="tag">2,5 km aprox.</span
+						><span class="tag">35–40 min</span
+						><span class="tag">Dificultad adaptable</span>
+					</article>
+				</div>
+			</section>
+			<section id="practicas">
+				<div class="section-head">
+					<h2>Aprende a relajarte</h2>
+					<p>
+						Guía visual y práctica de los cinco ejercicios incluidos
+						en las sesiones. Realiza los movimientos sin forzar y
+						detente si aparece dolor, mareo o malestar.
+					</p>
+				</div>
+				<details class="exercise" open>
+					<summary>1. Respiración diafragmática</summary>
+					<div class="inside">
+						<p>
+							<b>Objetivo:</b> respirar lentamente utilizando el
+							abdomen y prestar atención a la entrada y salida del
+							aire.
+						</p>
+						<ol class="steps">
+							<li>
+								Siéntate con la espalda apoyada o túmbate en una
+								postura cómoda.
+							</li>
+							<li>
+								Coloca una mano sobre el pecho y otra sobre el
+								abdomen.
+							</li>
+							<li>
+								Inspira suavemente por la nariz, dejando que se
+								eleve el abdomen.
+							</li>
+							<li>Suelta el aire despacio, sin forzarlo.</li>
+							<li>Repite a un ritmo cómodo.</li>
+						</ol>
+						<div class="timer">
+							<span>Tiempo de práctica</span
+							><strong id="t1">02:00</strong
+							><button onclick="startTimer(120,'t1',this)">
+								Iniciar</button
+							><button
+								class="secondary"
+								onclick="resetTimer(120,'t1')"
+							>
+								Reiniciar
+							</button>
+						</div>
+					</div>
+				</details>
+				<details class="exercise">
+					<summary>2. Relajación muscular</summary>
+					<div class="inside">
+						<p>
+							<b>Objetivo:</b> reconocer y reducir la tensión
+							corporal mediante la contracción suave y posterior
+							relajación.
+						</p>
+						<ol class="steps">
+							<li>
+								Adopta una postura cómoda, sentado o tumbado.
+							</li>
+							<li>
+								Aprieta suavemente las manos durante unos
+								segundos, sin provocar dolor.
+							</li>
+							<li>Relaja las manos y observa la diferencia.</li>
+							<li>
+								Continúa con hombros, brazos, rostro y piernas,
+								sin forzar ninguna zona.
+							</li>
+							<li>Termina respirando tranquilamente.</li>
+						</ol>
+						<div class="timer">
+							<span>Tiempo de práctica</span
+							><strong id="t2">03:00</strong
+							><button onclick="startTimer(180,'t2',this)">
+								Iniciar</button
+							><button
+								class="secondary"
+								onclick="resetTimer(180,'t2')"
+							>
+								Reiniciar
+							</button>
+						</div>
+					</div>
+				</details>
+				<details class="exercise">
+					<summary>3. Estiramientos suaves</summary>
+					<div class="inside">
+						<p>
+							<b>Objetivo:</b> realizar movimientos controlados de
+							cuello, hombros, brazos, espalda y piernas.
+						</p>
+						<ol class="steps">
+							<li>Siéntate o ponte de pie con apoyo estable.</li>
+							<li>
+								Inclina suavemente la cabeza hacia un lado, sin
+								tirar de ella.
+							</li>
+							<li>Eleva y baja los hombros lentamente.</li>
+							<li>
+								Estira los brazos de forma cómoda y mueve
+								suavemente la espalda.
+							</li>
+							<li>
+								Realiza movimientos suaves de tobillos y
+								piernas.
+							</li>
+						</ol>
+						<div class="timer">
+							<span>Tiempo de práctica</span
+							><strong id="t3">03:00</strong
+							><button onclick="startTimer(180,'t3',this)">
+								Iniciar</button
+							><button
+								class="secondary"
+								onclick="resetTimer(180,'t3')"
+							>
+								Reiniciar
+							</button>
+						</div>
+					</div>
+				</details>
+				<details class="exercise">
+					<summary>4. Relajación guiada</summary>
+					<div class="inside">
+						<p>
+							<b>Objetivo:</b> favorecer la desconexión de las
+							preocupaciones mediante instrucciones tranquilas y
+							música suave.
+						</p>
+						<ol class="steps">
+							<li>
+								Busca un lugar tranquilo y adopta una postura
+								cómoda.
+							</li>
+							<li>
+								Cierra los ojos si te resulta agradable, o deja
+								la mirada descansando.
+							</li>
+							<li>
+								Escucha una guía de relajación o una música
+								tranquila.
+							</li>
+							<li>
+								Dirige la atención a distintas partes del cuerpo
+								y permite que se relajen.
+							</li>
+							<li>
+								Al terminar, vuelve poco a poco a la actividad.
+							</li>
+						</ol>
+						<div class="timer">
+							<span>Tiempo de práctica</span
+							><strong id="t4">05:00</strong
+							><button onclick="startTimer(300,'t4',this)">
+								Iniciar</button
+							><button
+								class="secondary"
+								onclick="resetTimer(300,'t4')"
+							>
+								Reiniciar
+							</button>
+						</div>
+					</div>
+				</details>
+				<details class="exercise">
+					<summary>5. Atención plena</summary>
+					<div class="inside">
+						<p>
+							<b>Objetivo:</b> concentrarse en la respiración y en
+							las sensaciones del cuerpo, dejando pasar los
+							pensamientos sin juzgarlos.
+						</p>
+						<ol class="steps">
+							<li>Siéntate en una postura estable y cómoda.</li>
+							<li>Lleva la atención a la respiración natural.</li>
+							<li>
+								Nota las sensaciones del cuerpo y los puntos de
+								apoyo.
+							</li>
+							<li>
+								Si aparece un pensamiento, reconócelo y vuelve
+								con suavidad a la respiración.
+							</li>
+							<li>Finaliza moviendo lentamente manos y pies.</li>
+						</ol>
+						<div class="timer">
+							<span>Tiempo de práctica</span
+							><strong id="t5">03:00</strong
+							><button onclick="startTimer(180,'t5',this)">
+								Iniciar</button
+							><button
+								class="secondary"
+								onclick="resetTimer(180,'t5')"
+							>
+								Reiniciar
+							</button>
+						</div>
+					</div>
+				</details>
+			</section>
+			<section id="diario">
+				<div class="section-head">
+					<h2>Diario del sueño</h2>
+					<p>
+						Registra tus hábitos de descanso durante siete días. Los
+						datos se guardan en este navegador y en este
+						dispositivo.
+					</p>
+				</div>
+				<div class="card">
+					<form id="sleepForm">
+						<label
+							>Fecha<input type="date" id="sleepDate" required
+						/></label>
+						<label
+							>Hora de acostarse<input type="time" id="bed"
+						/></label>
+						<label
+							>Hora de levantarse<input type="time" id="wake"
+						/></label>
+						<label
+							>Despertares durante la noche<select id="wakeups">
+								<option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3 o más</option>
+							</select></label
+						>
+						<label
+							>Calidad del sueño<select id="quality">
+								<option>Muy buena</option>
+								<option>Buena</option>
+								<option>Regular</option>
+								<option>Mala</option>
+							</select></label
+						>
+						<label
+							>¿Usaste pantallas antes de dormir?<select
+								id="screens"
+							>
+								<option>No</option>
+								<option>Sí</option>
+							</select></label
+						>
+						<label style="grid-column: 1/-1"
+							>Observaciones<textarea
+								id="notes"
+								placeholder="¿Cómo te has sentido al despertar? ¿Has seguido alguna rutina relajante?"
+							></textarea>
+						</label>
+						<div
+							class="controls"
+							style="grid-column: 1/-1; margin: 0"
+						>
+							<button type="submit">Guardar registro</button
+							><button
+								type="button"
+								class="secondary"
+								onclick="showEntries()"
+							>
+								Ver registros guardados
+							</button>
+						</div>
+					</form>
+					<div id="entries" style="margin-top: 15px"></div>
+				</div>
+				<p class="edit-note">
+					Privacidad: este prototipo guarda los registros localmente
+					mediante el navegador. No envía los datos a un profesional
+					ni a un servidor. No introduzcas información identificativa
+					o datos médicos sensibles.
+				</p>
+			</section>
+			<section id="edicion">
+				<div class="section-head">
+					<h2>Personaliza esta página</h2>
+					<p>
+						Puedes editar algunos textos directamente y guardar los
+						cambios en este navegador. Para cambiar la estructura,
+						colores o funciones, modifica el archivo HTML.
+					</p>
+				</div>
+				<div class="card">
+					<div class="controls">
+						<button id="editBtn" onclick="toggleEdit()">
+							Activar edición de textos</button
+						><button class="secondary" onclick="saveEdits()">
+							Guardar cambios</button
+						><button class="secondary" onclick="location.reload()">
+							Recargar página
+						</button>
+					</div>
+					<p class="edit-note">
+						Al activar la edición, los textos marcados con un
+						contorno discontinuo se pueden modificar haciendo clic.
+						Para conservar los cambios en este dispositivo, pulsa
+						«Guardar cambios». También puedes editar el código con
+						un editor de texto.
+					</p>
+				</div>
+			</section>
+		</main>
+		<footer>
+			Programa comunitario de promoción de la salud · Teis · Proyecto
+			educativo
+		</footer>
+		<script>
+			const plan = [
+				[
+					"Mes 1",
+					[
+						"Taller informativo (cada 2 semanas)",
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Relajación y respiración (semanal)",
+						"Experiencias compartidas (2/mes)",
+						"Registro de síntomas",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				[
+					"Mes 2",
+					[
+						"Taller informativo (cada 2 semanas)",
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Relajación y respiración (semanal)",
+						"Experiencias compartidas (2/mes)",
+						"Registro de síntomas",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				[
+					"Mes 3",
+					[
+						"Taller informativo (cada 2 semanas)",
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Relajación y respiración (semanal)",
+						"Experiencias compartidas (2/mes)",
+						"Registro de síntomas",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				[
+					"Mes 4",
+					[
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Relajación y respiración (semanal)",
+						"Experiencias compartidas (2/mes)",
+						"Registro de síntomas",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				[
+					"Mes 5",
+					[
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Relajación y respiración (semanal)",
+						"Experiencias compartidas (2/mes)",
+						"Registro de síntomas",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				[
+					"Mes 6",
+					[
+						"Caminatas saludables (2/semana)",
+						"Programa de mejora del sueño",
+						"Alimentación y nutrición",
+						"Seguimiento tiroideo",
+					],
+				],
+				["Mes 7", ["Seguimiento tiroideo y evaluación final"]],
+			];
+			function renderCalendar() {
+				const start = document.getElementById("startMonth").value;
+				let base = start ? new Date(start + "-01T12:00:00") : null;
+				document.getElementById("calendar").innerHTML = plan
+					.map((m, i) => {
+						let label = m[0];
+						if (base) {
+							let d = new Date(
+								base.getFullYear(),
+								base.getMonth() + i,
+								1
+							);
+							label = d.toLocaleDateString("es-ES", {
+								month: "long",
+								year: "numeric",
+							});
+							label =
+								label.charAt(0).toUpperCase() + label.slice(1);
+						}
+						return `<article class="month"><h3>${label}</h3><ul>${m[1]
+							.map((a) => `<li>${a}</li>`)
+							.join("")}</ul></article>`;
+					})
+					.join("");
+			}
+			renderCalendar();
+			document.getElementById("startMonth").value = "2026-12";
+			renderCalendar();
+			let timers = {};
+			function fmt(s) {
+				return (
+					String(Math.floor(s / 60)).padStart(2, "0") +
+					":" +
+					String(s % 60).padStart(2, "0")
+				);
+			}
+			function startTimer(total, id, btn) {
+				if (timers[id]) return;
+				let remain = Number(
+					document.getElementById(id).dataset.remaining || total
+				);
+				btn.disabled = true;
+				timers[id] = setInterval(() => {
+					remain--;
+					document.getElementById(id).textContent = fmt(
+						Math.max(0, remain)
+					);
+					document.getElementById(id).dataset.remaining = remain;
+					if (remain <= 0) {
+						clearInterval(timers[id]);
+						delete timers[id];
+						btn.disabled = false;
+						alert(
+							"Has terminado el ejercicio. Tómate unos segundos antes de continuar."
+						);
+					}
+				}, 1000);
+			}
+			function resetTimer(total, id) {
+				if (timers[id]) {
+					clearInterval(timers[id]);
+					delete timers[id];
+				}
+				document.getElementById(id).textContent = fmt(total);
+				document.getElementById(id).dataset.remaining = total;
+				let b = document.querySelector(`[onclick*="'${id}'"]`);
+				if (b) b.disabled = false;
+			}
+			document.getElementById("sleepDate").value = new Date()
+				.toISOString()
+				.slice(0, 10);
+			document
+				.getElementById("sleepForm")
+				.addEventListener("submit", (e) => {
+					e.preventDefault();
+					let entry = {
+						date: sleepDate.value,
+						bed: bed.value,
+						wake: wake.value,
+						wakeups: wakeups.value,
+						quality: quality.value,
+						screens: screens.value,
+						notes: notes.value,
+					};
+					let all = JSON.parse(
+						localStorage.getItem("hashimotoSleep") || "[]"
+					);
+					all = all.filter((x) => x.date !== entry.date);
+					all.push(entry);
+					all.sort((a, b) => a.date.localeCompare(b.date));
+					localStorage.setItem("hashimotoSleep", JSON.stringify(all));
+					e.target.reset();
+					sleepDate.value = new Date().toISOString().slice(0, 10);
+					showEntries();
+					alert("Registro guardado en este dispositivo.");
+				});
+			function showEntries() {
+				let all = JSON.parse(
+					localStorage.getItem("hashimotoSleep") || "[]"
+				);
+				document.getElementById("entries").innerHTML = all.length
+					? "<h3>Registros guardados</h3>" +
+					  all
+							.map(
+								(x) =>
+									`<div style="border-top:1px solid var(--line);padding:10px 0"><b>${
+										x.date
+									}</b> · ${x.quality} · Se acostó: ${
+										x.bed || "—"
+									} · Se levantó: ${
+										x.wake || "—"
+									}<br><small>Despertares: ${
+										x.wakeups
+									} · Pantallas: ${x.screens}</small><p>${
+										x.notes || ""
+									}</p></div>`
+							)
+							.join("")
+					: '<p class="edit-note">Todavía no hay registros guardados.</p>';
+			}
+			function toggleEdit() {
+				document.body.classList.toggle("editing");
+				document
+					.querySelectorAll('[data-editable="true"]')
+					.forEach(
+						(el) =>
+							(el.contentEditable =
+								document.body.classList.contains("editing"))
+					);
+				document.getElementById("editBtn").textContent =
+					document.body.classList.contains("editing")
+						? "Desactivar edición de textos"
+						: "Activar edición de textos";
+			}
+			function saveEdits() {
+				let data = [
+					...document.querySelectorAll('[data-editable="true"]'),
+				].map((el) => el.innerHTML);
+				localStorage.setItem("hashimotoEdits", JSON.stringify(data));
+				alert("Cambios guardados en este navegador.");
+			}
+			(function () {
+				let saved = JSON.parse(
+					localStorage.getItem("hashimotoEdits") || "null"
+				);
+				if (saved) {
+					document
+						.querySelectorAll('[data-editable="true"]')
+						.forEach((el, i) => {
+							if (saved[i] !== undefined) el.innerHTML = saved[i];
+						});
+				}
+			})();
+		</script>
+	</body>
+</html>
